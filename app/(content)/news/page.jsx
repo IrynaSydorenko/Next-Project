@@ -1,13 +1,14 @@
 import React from 'react';
-import NewsList from '../components/NewsList/NewsList';
-import { DUMMY_NEWS } from '@/dummyNews';
+import NewsList from '@/app/components/NewsList/NewsList';
+import { getAllNews } from '@/lib/news';
 
 async function NewsPage() {
+  const news = await getAllNews();
   return (
     <>
       <main>
         <h1>News Page</h1>
-        <NewsList news={DUMMY_NEWS} />
+        <NewsList news={news} />
       </main>
     </>
   );
